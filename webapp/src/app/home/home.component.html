@@ -1,0 +1,64 @@
+
+<head>
+    <link rel="stylesheet" href="home.component.scss">
+  </head>
+  
+  <div class="form-group">
+    <label for="scope"><h5>Scope</h5></label>
+    <select class="form-select" id="scope" (change)="compCall1($event.target)">
+        <option value="All">All</option>
+        <option *ngFor="let i of scopes" [value]="i.name" >{{i.name}}</option>
+    </select>
+  </div>
+  
+  <div class = "form-group">
+    <label for="comp"><h5>Component</h5></label>
+    <select  class="form-select" id="comp" (change)="compCall2($event.target)">
+        <option value="All">All</option>
+        <option *ngFor="let j of comps" [value]="j.name" >{{j.name}}</option>
+    </select>
+  </div>
+  
+  <div class = "search">
+  <button type="button" class="btn btn-outline-primary" (click)="onClick($event)">
+      Search
+  </button>
+  </div>
+  
+  <table class="table r table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  
+  <!-- <ul>
+    <li *ngFor="let i of posts">
+        {{ i.name }}
+    </li>
+  </ul> -->
