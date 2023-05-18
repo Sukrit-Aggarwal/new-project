@@ -58,6 +58,7 @@ def getCompInst():
     name_id = request.args.get('name')
     comp_id = request.args.get('component')
     sj_id = request.args.get('sj')
+    scp_id = request.args.get('scope')
 
     if(name_id):
         data = response.json()["component_instance"]
@@ -71,6 +72,10 @@ def getCompInst():
         data = response.json()["component_instance"]
         temp = [x for x in data if x["security_justification"] != None]
         return {"component_instance" : temp}
+    if(scp_id):
+        data = response.json()["component_instance"]
+        temp = [x for x in data if x["scope"] == scp_id]
+        return {"component_instance" : temp}
     else:
         return response.json()
 
@@ -80,9 +85,14 @@ def getService():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/service"
     response = requests.get(url1, verify = False)
     name_id = request.args.get('name')
+    scp_id = request.args.get('scope')
     if(name_id):
         data = response.json()["service"]
         temp = [x for x in data if x["name"] == name_id]
+        return {"service" : temp}
+    if(scp_id):
+        data = response.json()["service"]
+        temp = [x for x in data if x["scope"] == scp_id]
         return {"service" : temp}
     else:
         return response.json()
@@ -92,21 +102,39 @@ def getService():
 def getDependency():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/dependency"
     response = requests.get(url1, verify = False)
-    return response.json()
+    scp_id = request.args.get('scope')
+    if(scp_id):
+        data = response.json()["dependency"]
+        temp = [x for x in data if x["scope"] == scp_id]
+        return {"dependency" : temp}
+    else:
+        return response.json()
 
 
 @app.route('/fulllist/dependency_instance')
 def getDepInst():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/dependency_instance"
     response = requests.get(url1, verify = False)
-    return response.json()
+    scp_id = request.args.get('scope')
+    if(scp_id):
+        data = response.json()["dependency_instance"]
+        temp = [x for x in data if x["scope"] == scp_id]
+        return {"dependency_instance" : temp}
+    else:
+        return response.json()
 
 
 @app.route('/fulllist/ipaddress_instance')
 def getIPAddInst():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/ipaddress_instance"
     response = requests.get(url1, verify = False)
-    return response.json()
+    scp_id = request.args.get('scope')
+    if(scp_id):
+        data = response.json()["ipaddress_instance"]
+        temp = [x for x in data if x["scope"] == scp_id]
+        return {"ipaddress_instance" : temp}
+    else:
+        return response.json()
 
 
 # API calls with name filters ##########################################

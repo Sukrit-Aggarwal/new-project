@@ -37,6 +37,90 @@
     </thead>
 
     <tbody>
+
+        <tr *ngFor = "let c of compname">
+
+            <td></td>
+            
+            <td>
+              Component
+            </td>
+            
+            <td>
+              {{c.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let ci of compinstname">
+
+            <td></td>
+            
+            <td>
+              Component Instance
+            </td>
+            
+            <td>
+              {{ci.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let s of servicename">
+
+            <td></td>
+            
+            <td>
+              Service
+            </td>
+            
+            <td>
+              {{s.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let d of depname">
+
+            <td></td>
+            
+            <td>
+              Dependency
+            </td>
+            
+            <td>
+              {{d.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let di of depinstname">
+
+            <td></td>
+            
+            <td>
+              Dependency Instance
+            </td>
+            
+            <td>
+              {{di.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let ip of ipadinstname">
+
+            <td></td>
+            
+            <td>
+              IP Address Instance
+            </td>
+            
+            <td>
+              {{ip.name}}
+            </td>
+
+        </tr>
         
         
     </tbody>
