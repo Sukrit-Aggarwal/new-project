@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { CompComponent } from './comp/comp.component';
+import { ScopeclickComponent } from './scopeclick/scopeclick.component';
+import { CompclickComponent } from './compclick/compclick.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CompComponent } from './comp/comp.component';
     HomeComponent,
     SidebarComponent,
     TopbarComponent,
-    CompComponent
+    CompComponent,
+    ScopeclickComponent,
+    CompclickComponent
   ],
   imports: [
     BrowserModule,

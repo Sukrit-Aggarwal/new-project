@@ -1,1 +1,43 @@
-<p>comp works!</p>
+<head>
+    <link rel="stylesheet" href="comp.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>Component Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "comp-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 15%" scope="col">Scope</th>
+        <th style="width: 45%" scope="col">Comment</th>
+        <th style="width: 10%" scope="col">is_hosted</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let c of comps">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/component',c.name]">
+              {{c.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{c.scope}}
+          </td>
+          <td id = "tdcomment">
+            {{c.comment}}
+          </td>
+          <td id = "tdishosted">
+            {{c.is_hosted}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
