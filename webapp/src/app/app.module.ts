@@ -13,6 +13,16 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { CompComponent } from './comp/comp.component';
 import { ScopeclickComponent } from './scopeclick/scopeclick.component';
 import { CompclickComponent } from './compclick/compclick.component';
+import { CompinstComponent } from './compinst/compinst.component';
+import { CompinstclickComponent } from './compinstclick/compinstclick.component';
+import { DependencyComponent } from './dependency/dependency.component';
+import { DepclickComponent } from './depclick/depclick.component';
+import { DepinstComponent } from './depinst/depinst.component';
+import { DepinstclickComponent } from './depinstclick/depinstclick.component';
+import { AudservicesComponent } from './audservices/audservices.component';
+import { AudservclickComponent } from './audservclick/audservclick.component';
+import { IpadinstComponent } from './ipadinst/ipadinst.component';
+import { IpadclickComponent } from './ipadclick/ipadclick.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +32,17 @@ import { CompclickComponent } from './compclick/compclick.component';
     TopbarComponent,
     CompComponent,
     ScopeclickComponent,
-    CompclickComponent
+    CompclickComponent,
+    CompinstComponent,
+    CompinstclickComponent,
+    DependencyComponent,
+    DepclickComponent,
+    DepinstComponent,
+    DepinstclickComponent,
+    AudservicesComponent,
+    AudservclickComponent,
+    IpadinstComponent,
+    IpadclickComponent
   ],
   imports: [
     BrowserModule,

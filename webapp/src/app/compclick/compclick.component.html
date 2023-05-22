@@ -1,1 +1,86 @@
-<p>compclick works!</p>
+<head>
+    <link rel="stylesheet" href="compclick.component.scss">
+</head>
+
+<div class = "h2name">
+    <h2>{{name}}</h2>
+</div>
+
+<div class = "rep-bt">
+    <button type="button" class="btn btn-outline-primary">
+        Connectivity Table
+    </button>
+</div>
+
+<h5 id = "h5heading">
+    Objects referencing this Component
+</h5>
+
+<table class="table r table-striped table-hover" id = "comp-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Scope</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let c of compinstname">
+
+            <td></td>
+            
+            <td>
+              Component Instance
+            </td>
+
+            <td>
+                {{c.scope}}
+            </td>
+            
+            <td>
+              {{c.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let s of servicename">
+
+            <td></td>
+            
+            <td>
+              Service
+            </td>
+            
+            <td>
+                {{s.scope}}
+            </td>
+
+            <td>
+                {{s.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let d of depname">
+
+            <td></td>
+            
+            <td>
+              Dependency
+            </td>
+            
+            <td>
+              {{d.scope}}
+            </td>
+
+            <td>
+                {{d.name}}
+            </td>
+
+        </tr>
+
+
+    </tbody>

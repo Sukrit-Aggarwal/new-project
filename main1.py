@@ -86,6 +86,7 @@ def getService():
     response = requests.get(url1, verify = False)
     name_id = request.args.get('name')
     scp_id = request.args.get('scope')
+    comp_id = request.args.get('component')
     if(name_id):
         data = response.json()["service"]
         temp = [x for x in data if x["name"] == name_id]
@@ -93,6 +94,10 @@ def getService():
     if(scp_id):
         data = response.json()["service"]
         temp = [x for x in data if x["scope"] == scp_id]
+        return {"service" : temp}
+    if(comp_id):
+        data = response.json()["service"]
+        temp = [x for x in data if x["component"] == comp_id]
         return {"service" : temp}
     else:
         return response.json()
@@ -103,9 +108,14 @@ def getDependency():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/dependency"
     response = requests.get(url1, verify = False)
     scp_id = request.args.get('scope')
+    comp_id = request.args.get('component')
     if(scp_id):
         data = response.json()["dependency"]
         temp = [x for x in data if x["scope"] == scp_id]
+        return {"dependency" : temp}
+    if(comp_id):
+        data = response.json()["dependency"]
+        temp = [x for x in data if ((x["source_component"] == comp_id) or (x["target_component"] == comp_id))]
         return {"dependency" : temp}
     else:
         return response.json()
