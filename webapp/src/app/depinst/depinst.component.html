@@ -1,1 +1,43 @@
-<p>depinst works!</p>
+<head>
+    <link rel="stylesheet" href="depinst.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>Dependency Instance Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "depinst-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 25%" scope="col">Name</th>
+        <th style="width: 15%" scope="col">Scope</th>
+        <th style="width: 35%" scope="col">Dependency</th>
+        <th style="width: 15%" scope="col">Landing Zone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let di of depinst">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/component',di.name]">
+              {{di.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{di.scope}}
+          </td>
+          <td id = "tddep">
+            {{di.dependency}}
+          </td>
+          <td id = "tdlz">
+            {{di.landingzone}}
+          </td>
+        </tr>
+      </tbody>
+    </table>

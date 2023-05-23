@@ -6,6 +6,15 @@ import { ScopeclickComponent } from './scopeclick/scopeclick.component';
 import { CompComponent } from './comp/comp.component';
 import { CompclickComponent } from './compclick/compclick.component';
 import { CompinstComponent } from './compinst/compinst.component';
+import { CompinstclickComponent } from './compinstclick/compinstclick.component';
+import { DependencyComponent } from './dependency/dependency.component';
+import { DepclickComponent } from './depclick/depclick.component';
+import { DepinstComponent } from './depinst/depinst.component';
+import { DepinstclickComponent } from './depinstclick/depinstclick.component';
+import { AudservicesComponent } from './audservices/audservices.component';
+import { AudservclickComponent } from './audservclick/audservclick.component';
+import { IpadinstComponent } from './ipadinst/ipadinst.component';
+import { IpadclickComponent } from './ipadclick/ipadclick.component';
 
 const routes: Routes = [
   { path : '', component: HomeComponent},
@@ -13,7 +22,16 @@ const routes: Routes = [
   { path : 'scope/:name', component: ScopeclickComponent  },
   { path : 'component', component: CompComponent},
   { path : 'component/:name', component: CompclickComponent},
-  { path : 'component_instance', component: CompinstComponent}
+  { path : 'component_instance', component: CompinstComponent},
+  { path : 'component_instance/:name', component: CompinstclickComponent},
+  { path : 'dependency', component: DependencyComponent},
+  { path : 'dependency/:name', component: DepclickComponent},
+  { path : 'dependency_instance', component: DepinstComponent},
+  { path : 'dependency_instance/:name', component: DepinstclickComponent},
+  { path : 'service', component: AudservicesComponent},
+  { path : 'service/:name', component: AudservclickComponent},
+  { path : 'ipaddinstance', component: IpadinstComponent},
+  { path : 'ipaddinstance/:name', component: IpadclickComponent},
 ];
 
 @NgModule({

@@ -1,1 +1,43 @@
-<p>ipadinst works!</p>
+<head>
+    <link rel="stylesheet" href="ipadinst.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>IP Address Instance Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "ipadd-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 15%" scope="col">Scope</th>
+        <th style="width: 25%" scope="col">Component_instance</th>
+        <th style="width: 20%" scope="col">Landing Zone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let i of ipadd">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/component',i.name]">
+              {{i.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{i.scope}}
+          </td>
+          <td id = "tdcompinst">
+            {{i.component_instance}}
+          </td>
+          <td id = "tdlz">
+            {{i.landingzone}}
+          </td>
+        </tr>
+      </tbody>
+    </table>

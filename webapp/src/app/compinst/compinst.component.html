@@ -1,1 +1,43 @@
-<p>compinst works!</p>
+<head>
+    <link rel="stylesheet" href="compinst.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>Component Instance Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "compinst-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 25%" scope="col">Name</th>
+        <th style="width: 20%" scope="col">Scope</th>
+        <th style="width: 25%" scope="col">Component</th>
+        <th style="width: 20%" scope="col">Landing Zone</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let c of compinst">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/component_instance',c.name]">
+              {{c.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{c.scope}}
+          </td>
+          <td id = "tdcomponent">
+            {{c.component}}
+          </td>
+          <td id = "tdlz">
+            {{c.landingzone}}
+          </td>
+        </tr>
+      </tbody>
+    </table>

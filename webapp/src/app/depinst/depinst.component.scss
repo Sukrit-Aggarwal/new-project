@@ -1,0 +1,9 @@
+table {
+    table-layout: fixed;
+    counter-reset: serial-number;
+  }
+  
+  tr td:first-child:before {
+    content: counters(serial-number, ".");
+    counter-increment: serial-number;
+  }

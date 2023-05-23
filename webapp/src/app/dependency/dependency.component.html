@@ -1,1 +1,40 @@
-<p>dependency works!</p>
+<head>
+    <link rel="stylesheet" href="dependency.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>Dependency Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "comp-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 30%" scope="col">Name</th>
+        <th style="width: 20%" scope="col">Scope</th>
+        <th style="width: 45%" scope="col">Security Justification</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let d of deps">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/dependency',d.name]">
+              {{d.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{d.scope}}
+          </td>
+          <td id = "tdsj">
+            {{d.security_justification}}
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>

@@ -1,1 +1,45 @@
-<p>audservices works!</p>
+<head>
+    <link rel="stylesheet" href="audservices.component.scss">
+</head>
+  
+<div class = intro>
+  <h2>Services Directory</h2>
+</div>
+
+<table class="table table-striped table-hover" id = "serv-table">
+    <thead>
+      <tr>
+        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 15%" scope="col">Scope</th>
+        <th style="width: 20%" scope="col">Component</th>
+        <th style="width: 35%" scope="col">Security Justification</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let s of serv">
+          <td id = "sno"></td>
+          
+          
+          <td id = "tdname">
+            <a [routerLink]="['/service',s.name]">
+              {{s.name}}
+            </a>
+          </td>
+          
+          <td id = "tdscope">
+            {{s.scope}}
+          </td>
+          <td id = "tdcomponentt">
+            {{s.component}}
+          </td>
+          <td id = "tdsj">
+            {{s.security_justification}}
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
