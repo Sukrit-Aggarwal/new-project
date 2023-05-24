@@ -14,6 +14,7 @@ export class AudservclickComponent {
   name: any;
   list:any;
   depinstname:any;
+  new_url:any
   
   url5 = 'http://127.0.0.1:5000/fulllist/dependency_instance'
   url50 = ''
@@ -31,10 +32,11 @@ export class AudservclickComponent {
   public getDepInstList(){
     console.log('---getDepInstList---')
     this.url50 = this.url5 + "?service=" + this.name;
-    console.log(this.url50);  
+    this.new_url = encodeURI(this.url50)
+    console.log(this.new_url);  
     
     this.subscription.add(
-      this.service.getPosts(this.url50)
+      this.service.getPosts(this.new_url)
       .subscribe(res => {
         console.log('---subscribe5---');
         this.depinstname = res["dependency_instance"]
