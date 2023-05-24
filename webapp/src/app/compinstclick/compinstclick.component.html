@@ -1,1 +1,68 @@
-<p>compinstclick works!</p>
+<head>
+    <link rel="stylesheet" href="compinstclick.component.scss">
+</head>
+
+<div class = "h2name">
+    <h2>{{name}}</h2>
+</div>
+
+<div class = "rep-bt">
+    <button type="button" class="btn btn-outline-primary">
+        Connectivity Table
+    </button>
+</div>
+
+<h5 id = "h5heading">
+    Objects referencing this Component Instance
+</h5>
+
+<table class="table r table-striped table-hover" id = "compinst-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Scope</th>
+        <th scope="col">Name</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let d of depinstname">
+
+            <td></td>
+            
+            <td>
+              Dependency Instance
+            </td>
+
+            <td>
+                {{d.scope}}
+            </td>
+            
+            <td>
+              {{d.name}}
+            </td>
+
+        </tr>
+
+        <tr *ngFor = "let i of ipadinstname">
+
+            <td></td>
+            
+            <td>
+              IP Address Instance
+            </td>
+            
+            <td>
+                {{i.scope}}
+            </td>
+
+            <td>
+                {{i.name}}
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>

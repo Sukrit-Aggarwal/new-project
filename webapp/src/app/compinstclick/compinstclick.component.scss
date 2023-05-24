@@ -1,0 +1,31 @@
+#compinst-table{
+    margin-top: 20px;
+}
+
+#h5heading{
+    margin-top: 15px;
+    padding-left: 10px;
+    font-style: italic;
+
+}
+
+.h2name{
+    padding-left: 10px;
+    display: inline-block;
+    
+}
+
+.rep-bt{
+    float: right;
+}
+
+
+table {
+    table-layout: fixed;
+    counter-reset: serial-number;
+  }
+  
+tr td:first-child:before {
+    content: counters(serial-number, ".");
+    counter-increment: serial-number;
+}

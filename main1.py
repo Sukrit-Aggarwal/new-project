@@ -126,9 +126,24 @@ def getDepInst():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/dependency_instance"
     response = requests.get(url1, verify = False)
     scp_id = request.args.get('scope')
+    compinst_id = request.args.get('component_instance')
+    dep_id = request.args.get('dependency')
+    serv_id = request.args.get('service')
     if(scp_id):
         data = response.json()["dependency_instance"]
         temp = [x for x in data if x["scope"] == scp_id]
+        return {"dependency_instance" : temp}
+    if(compinst_id):
+        data = response.json()["dependency_instance"]
+        temp = [x for x in data if ((x["source_component_instance"] == compinst_id) or (x["target_component_instance"] == compinst_id))]
+        return {"dependency_instance" : temp}
+    if(dep_id):
+        data = response.json()["dependency_instance"]
+        temp = [x for x in data if x["dependency"] == dep_id]
+        return {"dependency_instance" : temp}
+    if(serv_id):
+        data = response.json()["dependency_instance"]
+        temp = [x for x in data if x.get("target_services") and x["target_services"][0]["name"] == serv_id]
         return {"dependency_instance" : temp}
     else:
         return response.json()
@@ -139,9 +154,14 @@ def getIPAddInst():
     url1 = "https://aud-api-prd.gob.amadeus.net/fulllist/ipaddress_instance"
     response = requests.get(url1, verify = False)
     scp_id = request.args.get('scope')
+    compinst_id = request.args.get('component_instance')
     if(scp_id):
         data = response.json()["ipaddress_instance"]
         temp = [x for x in data if x["scope"] == scp_id]
+        return {"ipaddress_instance" : temp}
+    if(compinst_id):
+        data = response.json()["ipaddress_instance"]
+        temp = [x for x in data if ((x["component_instance"] == compinst_id))]
         return {"ipaddress_instance" : temp}
     else:
         return response.json()

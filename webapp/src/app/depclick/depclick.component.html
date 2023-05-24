@@ -1,1 +1,56 @@
-<p>depclick works!</p>
+<head>
+    <link rel="stylesheet" href="depclick.component.scss">
+</head>
+
+<div class = "h2name">
+    <h3>{{name}}</h3>
+</div>
+
+<div class = "rep-bt">
+    <button type="button" class="btn btn-outline-primary">
+        Connectivity Table
+    </button>
+</div>
+
+<h5 id = "h5heading">
+    Objects referencing this Dependency
+</h5>
+
+<table class="table r table-striped table-hover" id = "comp-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Scope</th>
+        <th scope="col">Landing Zone</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let d of depinstname">
+
+            <td></td>
+            
+            <td>
+              Dependency Instance
+            </td>
+
+            <td>
+                {{d.name}}
+            </td>
+            
+            <td>
+              {{d.scope}}
+            </td>
+
+            <td>
+                {{d.landingzone}}
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
