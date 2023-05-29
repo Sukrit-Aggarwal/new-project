@@ -9,11 +9,16 @@
 <table class="table table-striped table-hover" id = "comp-table">
     <thead>
       <tr>
-        <th style="width: 10%" scope="col">#</th>
-        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 4%" scope="col">#</th>
+        <th style="width: 15%" scope="col">Name</th>
         <th style="width: 15%" scope="col">Scope</th>
-        <th style="width: 45%" scope="col">Comment</th>
-        <th style="width: 10%" scope="col">is_hosted</th>
+        <th style="width: 9%" scope="col">is_hosted</th>
+        <th style="width: 9%" scope="col">is_hosting</th>
+        <th style="width: 9%" scope="col">is_private</th>
+        <th style="width: 9%" scope="col">is_public</th>
+        <th style="width: 15%" scope="col">is_public_dependency</th>
+        <th style="width: 15%" scope="col">is_public_inheritance</th>
+
       </tr>
     </thead>
 
@@ -33,10 +38,22 @@
             {{c.scope}}
           </td>
           <td id = "tdcomment">
-            {{c.comment}}
+            {{c.is_hosted}}
           </td>
           <td id = "tdishosted">
-            {{c.is_hosted}}
+            {{c.is_hosting}}
+          </td>
+          <td id = "tdishosted">
+            {{c.is_private}}
+          </td>
+          <td id = "tdishosted">
+            {{c.is_public}}
+          </td>
+          <td id = "tdishosted">
+            {{c.is_public_dependency}}
+          </td>
+          <td id = "tdishosted">
+            {{c.is_public_inheritance}}
           </td>
         </tr>
       </tbody>

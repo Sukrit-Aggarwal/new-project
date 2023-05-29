@@ -9,11 +9,13 @@
 <table class="table table-striped table-hover" id = "serv-table">
     <thead>
       <tr>
-        <th style="width: 10%" scope="col">#</th>
+        <th style="width: 5%" scope="col">#</th>
         <th style="width: 20%" scope="col">Name</th>
         <th style="width: 15%" scope="col">Scope</th>
         <th style="width: 20%" scope="col">Component</th>
-        <th style="width: 35%" scope="col">Security Justification</th>
+        <th style="width: 20%" scope="col">Ports</th>
+        <th style="width: 10%" scope="col">Protocol</th>
+        <th style="width: 10%" scope="col">Encrypted</th>
       </tr>
     </thead>
 
@@ -35,8 +37,14 @@
           <td id = "tdcomponentt">
             {{s.component}}
           </td>
-          <td id = "tdsj">
-            {{s.security_justification}}
+          <td id = "tdpt">
+            {{s.ports}}
+          </td>
+          <td id = "tdpl">
+            {{s.protocol}}
+          </td>
+          <td id = "tdpl">
+            {{s.is_encrypted}}
           </td>
 
         </tr>

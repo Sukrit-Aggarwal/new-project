@@ -9,11 +9,12 @@
 <table class="table table-striped table-hover" id = "ipadd-table">
     <thead>
       <tr>
-        <th style="width: 10%" scope="col">#</th>
-        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 5%" scope="col">#</th>
+        <th style="width: 15%" scope="col">Name</th>
         <th style="width: 15%" scope="col">Scope</th>
-        <th style="width: 25%" scope="col">Component_instance</th>
-        <th style="width: 20%" scope="col">Landing Zone</th>
+        <th style="width: 20%" scope="col">Component_instance</th>
+        <th style="width: 15%" scope="col">Landing Zone</th>
+        <th style="width: 20%" scope="col">Host</th>
       </tr>
     </thead>
 
@@ -37,6 +38,9 @@
           </td>
           <td id = "tdlz">
             {{i.landingzone}}
+          </td>
+          <td id = "tdhs">
+            {{i.host}}
           </td>
         </tr>
       </tbody>

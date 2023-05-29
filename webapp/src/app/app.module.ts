@@ -24,6 +24,9 @@ import { AudservclickComponent } from './audservclick/audservclick.component';
 import { IpadinstComponent } from './ipadinst/ipadinst.component';
 import { IpadclickComponent } from './ipadclick/ipadclick.component';
 
+import { SearchPipe } from './search.pipe';
+import { NewaudComponent } from './newaud/newaud.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +45,9 @@ import { IpadclickComponent } from './ipadclick/ipadclick.component';
     AudservicesComponent,
     AudservclickComponent,
     IpadinstComponent,
-    IpadclickComponent
+    IpadclickComponent,
+    SearchPipe,
+    NewaudComponent
   ],
   imports: [
     BrowserModule,

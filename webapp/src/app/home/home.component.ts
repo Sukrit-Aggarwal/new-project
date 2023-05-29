@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Subscription } from 'rxjs'
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,46 +16,48 @@ export class HomeComponent implements OnInit {
   url1 = 'http://127.0.0.1:5000/fulllist/scope';
   url2 = 'http://127.0.0.1:5000/fulllist/component';
   url3 = 'http://localhost:4200/'
+
   constructor(private service:PostService) {}
 
   scp:any
   cmp:any
   Sclk:any
+  
 
-  compCall1(event:any)
-  {
-    this.scp = event.value;
-    console.log(this.scp);
-    this.url2 = this.url2 + "?scope=" + this.scp;
-    console.log(this.url2)
-    this.getCompList(this.url2)
-    this.url2 = 'http://127.0.0.1:5000/fulllist/component'
-  }
-  compCall2(event:any)
-  {
-    this.cmp = event.value;
-    console.log(this.cmp);
-  }
+  // compCall1(event:any)
+  // {
+  //   this.scp = event.value;
+  //   console.log(this.scp);
+  //   this.url2 = this.url2 + "?scope=" + this.scp;
+  //   console.log(this.url2)
+  //   this.getCompList(this.url2)
+  //   this.url2 = 'http://127.0.0.1:5000/fulllist/component'
+  // }
+  // compCall2(event:any)
+  // {
+  //   this.cmp = event.value;
+  //   console.log(this.cmp);
+  // }
 
-  onClick(event:any){  // not using
-    console.log('-----')
-    console.log(this.scp)
-    console.log(this.cmp)
-  }
+  // onClick(event:any){  // not using
+  //   console.log('-----')
+  //   console.log(this.scp)
+  //   console.log(this.cmp)
+  // }
 
-  onClick2(event:any){  //not using
-    this.Sclk = event.target.innerHTML
-    console.log('onClick2')
-    console.log(event)
-    console.log(this.Sclk)
-    this.url3 = this.url3 + "?name=" + this.Sclk
-    console.log(this.url3)
-  }
+  // onClick2(event:any){  //not using
+  //   this.Sclk = event.target.innerHTML
+  //   console.log('onClick2')
+  //   console.log(event)
+  //   console.log(this.Sclk)
+  //   this.url3 = this.url3 + "?name=" + this.Sclk
+  //   console.log(this.url3)
+  //}
 
 
   ngOnInit() {
       this.getScopeList(this.url1);
-      this.getCompList(this.url2)
+      //this.getCompList(this.url2);
   }
     public getScopeList(url1:any){
       this.subscription.add(

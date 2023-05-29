@@ -15,8 +15,10 @@ export class CompclickComponent {
   compinstname:any;
   servicename:any;
   depname:any;
+  comps:any
   
-  
+  url2 = 'http://127.0.0.1:5000/fulllist/component';
+  url20 = ''
   url3 = 'http://127.0.0.1:5000/fulllist/component_instance'
   url30 = ''
   url4 = 'http://127.0.0.1:5000/fulllist/service'
@@ -34,6 +36,22 @@ export class CompclickComponent {
     this.getCompInstList();
     this.getServiceList();
     this.getDepList();
+    this.getCompList(this.url2)
+  }
+
+  public getCompList(url2:any){
+    console.log('---getCompList---')
+    this.url20 = this.url2 + "?name=" + this.name;
+    console.log(this.url20);
+
+    this.subscription.add(
+      this.service.getPosts(url2)
+      .subscribe(res => {
+        console.log('--------');
+        this.comps = res["component"][0]["parents"];
+        console.log(this.comps)
+      },)
+    );
   }
 
   public getCompInstList(){

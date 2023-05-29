@@ -28,26 +28,34 @@
       Search
   </button>
   </div> -->
+
+
+
   
-  <table class="table r table-striped table-hover" id = "scope-table">
+  <!-- <div class="form-group pull-right" id = "searchbar">
+    <input class="search form-control" type="text" placeholder="What you looking for?">
+  </div> -->
+
+
+  <table class="table r table-striped table-hover" id = "scope-table" filter="filterRow">
     <thead>
       <tr>
         <th style="width: 10%" scope="col">#</th>
         <th style="width: 20%" scope="col">Name</th>
         <th style="width: 25%" scope="col">Admin Groups</th>
-        <th style="width: 35%" scope="col">Owners</th>
+        <th style="width: 35%" scope="col">Assignee Group</th>
         <th style="width: 10%" scope="col">Scope</th>
       </tr>
     </thead>
 
     <tbody>
 
-      <tr *ngFor = "let s of scopes">
+      <tr *ngFor = "let s of scopes ; ScopeFilter:name">
         <td></td>
         
         
         <td>
-          <a [routerLink]="['/scope',s.name]" (click)="onClick2($event)">
+          <a [routerLink]="['/scope',s.name]">
             {{s.name}}
           </a>
         </td>
@@ -56,7 +64,7 @@
           {{s.admin_groups}}
         </td>
         <td>
-          {{s.owners}}
+          {{s.assignee_group}}
         </td>
         <td>
           {{s.scope}}
@@ -65,10 +73,6 @@
     </tbody>
   </table>
 
+
   
   
-  <!-- <ul>
-    <li *ngFor="let i of posts">
-        {{ i.name }}
-    </li>
-  </ul> -->

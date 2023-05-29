@@ -9,11 +9,13 @@
 <table class="table table-striped table-hover" id = "depinst-table">
     <thead>
       <tr>
-        <th style="width: 10%" scope="col">#</th>
-        <th style="width: 25%" scope="col">Name</th>
-        <th style="width: 15%" scope="col">Scope</th>
-        <th style="width: 35%" scope="col">Dependency</th>
-        <th style="width: 15%" scope="col">Landing Zone</th>
+        <th style="width: 5%" scope="col">#</th>
+        <th style="width: 20%" scope="col">Name</th>
+        <th style="width: 10%" scope="col">Scope</th>
+        <th style="width: 25%" scope="col">Dependency</th>
+        <th style="width: 10%" scope="col">Landing Zone</th>
+        <th style="width: 15%" scope="col">Source Component Instance</th>
+        <th style="width: 15%" scope="col">Target Component Instance</th>
       </tr>
     </thead>
 
@@ -37,6 +39,12 @@
           </td>
           <td id = "tdlz">
             {{di.landingzone}}
+          </td>
+          <td id = "tdlz">
+            {{di.source_component_instance}}
+          </td>
+          <td id = "tdlz">
+            {{di.target_component_instance}}
           </td>
         </tr>
       </tbody>

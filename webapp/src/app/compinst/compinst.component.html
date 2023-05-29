@@ -9,11 +9,14 @@
 <table class="table table-striped table-hover" id = "compinst-table">
     <thead>
       <tr>
-        <th style="width: 10%" scope="col">#</th>
-        <th style="width: 25%" scope="col">Name</th>
-        <th style="width: 20%" scope="col">Scope</th>
-        <th style="width: 25%" scope="col">Component</th>
-        <th style="width: 20%" scope="col">Landing Zone</th>
+        <th style="width: 8%" scope="col">#</th>
+        <th style="width: 22%" scope="col">Name</th>
+        <th style="width: 15%" scope="col">Scope</th>
+        <th style="width: 20%" scope="col">Component</th>
+        <th style="width: 15%" scope="col">Landing Zone</th>
+        <th style="width: 10%" scope="col">Application Phase</th>
+        <th style="width: 10%" scope="col">Endpoint Type</th>
+
       </tr>
     </thead>
 
@@ -38,6 +41,13 @@
           <td id = "tdlz">
             {{c.landingzone}}
           </td>
+          <td id = "tdap">
+            {{c.application_phase}}
+          </td>
+          <td id = "tdet">
+            {{c.endpoint_type}}
+          </td>
+
         </tr>
       </tbody>
     </table>
