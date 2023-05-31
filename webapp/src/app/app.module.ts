@@ -26,6 +26,7 @@ import { IpadclickComponent } from './ipadclick/ipadclick.component';
 
 import { SearchPipe } from './search.pipe';
 import { NewaudComponent } from './newaud/newaud.component';
+import { Step1Component } from './step1/step1.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { NewaudComponent } from './newaud/newaud.component';
     IpadinstComponent,
     IpadclickComponent,
     SearchPipe,
-    NewaudComponent
+    NewaudComponent,
+    Step1Component
   ],
   imports: [
     BrowserModule,

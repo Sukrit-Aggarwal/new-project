@@ -16,6 +16,7 @@ import { AudservclickComponent } from './audservclick/audservclick.component';
 import { IpadinstComponent } from './ipadinst/ipadinst.component';
 import { IpadclickComponent } from './ipadclick/ipadclick.component';
 import { NewaudComponent } from './newaud/newaud.component';
+import { Step1Component } from './step1/step1.component';
 
 const routes: Routes = [
   { path : '', component: HomeComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path : 'ipaddinstance', component: IpadinstComponent},
   { path : 'ipaddinstance/:name', component: IpadclickComponent},
   { path : 'createnewaud', component: NewaudComponent}
+  // { path : 'createnewaud/step1', component: Step1Component, outlet: "newaud"}
 ];
 
 @NgModule({
