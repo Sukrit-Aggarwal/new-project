@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,11 +13,14 @@ import { Router } from '@angular/router';
 
 export class NewaudComponent {
 
-  constructor(private readonly router: Router) { }
+  showStep1: boolean = false;
 
-  onClick(){
-    // console.log("newaud---onClick()")
-    // this.router.navigate([{ outlets: { 'newaud': 'createnewaud/step1'}}])
+  constructor(private readonly router: Router, private route: ActivatedRoute) { }
+
+  onClick() {
+    console.log("newaud---onClick()");
+    this.showStep1 = true;
+    this.router.navigate([{ outlets: { newaud: ['createnewaud', 'step1'] } }]);
   }
 
 }
