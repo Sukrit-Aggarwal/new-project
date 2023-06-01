@@ -34,8 +34,8 @@ const routes: Routes = [
   { path : 'service/:name', component: AudservclickComponent},
   { path : 'ipaddinstance', component: IpadinstComponent},
   { path : 'ipaddinstance/:name', component: IpadclickComponent},
-  { path : 'createnewaud', component: NewaudComponent}
-  // { path : 'createnewaud/step1', component: Step1Component, outlet: "newaud"}
+  { path : 'createnewaud', component: NewaudComponent},
+  { path : 'createnewaud/:step', component: Step1Component, outlet: 'newaud'}
 ];
 
 @NgModule({
