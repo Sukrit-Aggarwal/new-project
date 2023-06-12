@@ -2,42 +2,45 @@
 
 <!-- https://codepen.io/thdeux/pen/zBGNrM -->
 
-<div class="md-stepper-horizontal" (click)="onClick()">
-    <div class="md-step active">
+<div class="md-stepper-horizontal">
+    <div class="md-step active" (click)="onClick1()">
       <div class="md-step-circle"><span>1</span></div>
-      <div class="md-step-title">Step1</div>
+      <div class="md-step-title">Scope Creation</div>
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
-    <div class="md-step active">
+    <div class="md-step active" (click)="onClick2()">
       <div class="md-step-circle"><span>2</span></div>
-      <div class="md-step-title">Step2</div>
+      <div class="md-step-title">Defining Component</div>
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
-    <div class="md-step active">
+    <div class="md-step active" (click)="onClick3()">
       <div class="md-step-circle"><span>3</span></div>
-      <div class="md-step-title">Step3</div>
-      <div class="md-step-optional">Optional</div>
+      <div class="md-step-title">Component Instances</div>
+      <!-- <div class="md-step-optional">Optional</div> -->
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
-    <div class="md-step active">
+    <div class="md-step active" (click)="onClick4()">
       <div class="md-step-circle"><span>4</span></div>
-      <div class="md-step-title">Step4</div>
+      <div class="md-step-title">Dependency Instances</div>
       <div class="md-step-bar-left"></div>
       <div class="md-step-bar-right"></div>
     </div>
-    <div class="md-step active">
+    <!-- <div class="md-step active" (click)="onClick5()">
         <div class="md-step-circle"><span>5</span></div>
         <div class="md-step-title">Step5</div>
         <div class="md-step-bar-left"></div>
         <div class="md-step-bar-right"></div>
-    </div>
+    </div> -->
   </div>
 
   <div>
     <router-outlet name = "newaud"></router-outlet>
     <app-step1 *ngIf="showStep1"></app-step1>
+    <app-step2 *ngIf="showStep2"></app-step2>
+    <app-step3 *ngIf="showStep3"></app-step3>
+    <app-step4 *ngIf="showStep4"></app-step4>
   </div>
   
