@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class NewaudComponent {
 
-  showStep1: boolean = false;
+  showStep1: boolean = true;
   showStep2: boolean = false;
   showStep3: boolean = false;
   showStep4: boolean = false;
