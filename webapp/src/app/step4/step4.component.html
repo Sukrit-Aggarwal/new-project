@@ -1,3 +1,50 @@
 <body class = "body">
     <h3>Step 4: Dependency Instances</h3>
+    <div class = "content">
+        <h4 id = "h4">Description</h4>
+        <p></p>
+        <p>Dependency instance allows you to specify for a 
+            given instance of your Component which real 
+            Component instance you rely on.
+        </p>
+
+        <p>The dependency instance is the way to declare an instance 
+            of a connectivity (between 2 component_instances).
+        </p>
+
+        <p>This object has to reference the targeted_service of the 
+            destination component to know port and protocol to use.
+        </p>
+
+        <p>Before, each connectivity between the same component_instance 
+            had to be declared for each service used.
+        </p>
+
+        <p>
+            <a href = "https://bitbucket.gob.amadeus.net/projects/AUD/repos/auds-mongodb/browse/MongoDB-DependencyInstance.yml" target="_blank">
+                Example - MongoDB Dependency Instance
+            </a>
+        </p>
+
+        <img src="assets/di_glossary.png">
+
+        <p><strong>How to define Dependency instance in your scope repository</strong></p>
+        <p>
+            <a href = "https://rndwww.nce.amadeus.net/confluence/display/AUD/Dependency+Instance+-+Simplification+in+case+of+multiple+targeted+services" target="_blank">
+                Dependency Instance - Simplification in case of multiple targeted services
+            </a>
+        </p>
+
+        <p>
+            Once you've defined your dependency instance, here's how it will look here
+        </p>
+        <p>
+            <a href = "http://localhost:4200/dependency/1A-Business-Relay-Access%20to%201A-Business-Relay-POP" target="_blank">
+                Example - 1A-Business-Relay-Access to 1A-Business-Relay-POP
+            </a>
+        </p>
+
+
+    </div>
 </body>
+

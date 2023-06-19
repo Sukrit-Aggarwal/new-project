@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 import { Subscription } from 'rxjs'
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-compinstclick',
@@ -64,5 +65,26 @@ export class CompinstclickComponent {
     );
   }
 
+
+  downloadFile(): void {
+
+    if(this.name === '158107052883-argos-metrics-exporter'){
+      const filePath = 'assets/component_instance_158107052883-argos-metrics-exporter_1.0.8871.csv';
+      const fileName = this.getFileNameFromPath(filePath);
+      fetch(filePath)
+      .then(response => response.blob())
+      .then(blob => {
+        saveAs(blob, fileName);
+      })
+      .catch(error => {
+        console.error('Error downloading the file:', error);
+      });
+    }
+
+  }
+
+  private getFileNameFromPath(path: string): string {
+    return path.split('/').pop()!;
+  }
 
 }

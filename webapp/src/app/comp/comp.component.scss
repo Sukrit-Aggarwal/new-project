@@ -7,3 +7,10 @@ table {
     content: counters(serial-number, ".");
     counter-increment: serial-number;
   }
+
+  #tdscope{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+  }
